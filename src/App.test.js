@@ -24,7 +24,14 @@ it('includes UsersList', () => {
   expect(app.containsMatchingElement(<UsersList />)).toEqual(true)
 });
 
+
+//test props 
 it('shows message when there are no users', () => {
   const userList = shallow(<UsersList  users={[]} />);
-  expect(userList.text()).toContain('User not fount!')
+  expect(userList.text()).toContain('User not found!')
+});
+
+it('does not show message when there are users' , () => {
+  const usersList = shallow(<UsersList users={['Tom']} /> );
+  expect(usersList.text()).not.toContain('User not found!')
 });

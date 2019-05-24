@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import UsersList from './components/UsersList';
 
-const users = ['Mark', 'John', 'Jane', 'Karol', 'Martin', 'Tom'];
+const allUsers = ['Mark', 'John', 'Jane', 'Karol', 'Martin', 'Tom'];
 class App extends Component {
 
   state = {
-    filtered: users
+    filtered: allUsers
     
   }
 
   filterUser = (e) => {
     let text = e.target.value;
-    let filtered = users.filter(user=> {
+    let filtered = allUsers.filter(user=> {
       return (
         user.toLowerCase().includes(text.toLowerCase())
       )

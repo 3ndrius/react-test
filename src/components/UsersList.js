@@ -14,7 +14,7 @@ export default function UsersList({users}) {
             }
         </ul>
          :
-         <p>{"User not fount!"}</p>
+         <p>{"User not found!"}</p>
     )
     
     
