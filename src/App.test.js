@@ -23,3 +23,8 @@ it('includes UsersList', () => {
   const app = shallow(<App />);
   expect(app.containsMatchingElement(<UsersList />)).toEqual(true)
 });
+
+it('shows message when there are no users', () => {
+  const userList = shallow(<UsersList  users={[]} />);
+  expect(userList.text()).toContain('User not fount!')
+});

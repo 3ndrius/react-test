@@ -5,7 +5,8 @@ class App extends Component {
 
   state = {
     text: '',
-    users: ['Mark', 'John', 'Jane', 'Karol', 'Martin', 'Tom']
+    users: ['Mark', 'John', 'Jane', 'Karol', 'Martin', 'Tom'],
+    
   }
 
 

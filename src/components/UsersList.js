@@ -1,7 +1,9 @@
 import React from 'react'
 
 export default function UsersList({users}) {
+  
     return (
+        users.length > 0 ?
         <ul>
             {
                 users.map((user, id) => {
@@ -11,5 +13,9 @@ export default function UsersList({users}) {
                 })
             }
         </ul>
+         :
+         <p>{"User not fount!"}</p>
     )
+    
+    
 }
