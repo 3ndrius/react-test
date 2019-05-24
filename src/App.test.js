@@ -35,3 +35,10 @@ it('does not show message when there are users' , () => {
   const usersList = shallow(<UsersList users={['Tom']} /> );
   expect(usersList.text()).not.toContain('User not found!')
 });
+
+it('shows a list of users', () => {
+  const users = ['John', 'Tom'];
+  const usersList = shallow(<UsersList users={users} />);
+
+  expect(usersList.find('li').length).toEqual(users.length);
+});
