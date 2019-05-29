@@ -42,3 +42,31 @@ it('shows a list of users', () => {
 
   expect(usersList.find('li').length).toEqual(users.length);
 });
+
+describe('list of user', () => {
+  const users = ['Mark', 'Tom'];
+  const usersList = shallow(<UsersList users={users} />);
+  users.forEach(user => {
+    it(`includes name ${user} on the list `, () => {
+      expect(usersList.containsMatchingElement(<li>{user}</li>)).toEqual(true)
+    });
+  });
+});
+
+// passing prop / state
+
+
+it('passes all users to the UsersList', () => {
+  const app = shallow(<App />);
+  expect(app.find('UsersList').prop('users')).toEqual(['Mark', 'John', 'Jane', 'Karol', 'Martin', 'Tom'])
+});
+
+//interaction
+
+it('filters names on input', () => {
+  const app = shallow(<App />);
+  expect(app.find('UsersList').prop('users')).toEqual(['Mark', 'John', 'Jane', 'Karol', 'Martin', 'Tom']);
+  
+  app.find('input').simulate('input', {currentTarget: {value: 'M'}})
+  expect(app.find('UsersList').prop('users')).toEqual(['Mark', 'Martin', 'Tom']);
+});
