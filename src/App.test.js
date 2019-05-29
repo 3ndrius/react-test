@@ -42,3 +42,13 @@ it('shows a list of users', () => {
 
   expect(usersList.find('li').length).toEqual(users.length);
 });
+
+describe('list of user', () => {
+  const users = ['Mark', 'Tom'];
+  const usersList = shallow(<UsersList users={users} />);
+  users.forEach(user => {
+    it(`includes name ${user} on the list `, () => {
+      expect(usersList.containsMatchingElement(<li>{user}</li>)).toEqual(true)
+    });
+  });
+});
