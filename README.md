@@ -1,6 +1,6 @@
-# react-test learn
+# REACT_TEST_CONFIG
 
-## CLI ReactApp
+## CRA REACT
 ## Jest
 ## Enzyme & Enzyme-Adapter
 ## Sinon
